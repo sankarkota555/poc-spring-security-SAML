@@ -1,0 +1,16 @@
+
+logging:
+  level:
+    org.springframework.security.saml: DEBUG
+    org.opensaml: DEBUG
+    
+server:
+  port: 8087
+  
+spring:
+  profiles:
+    active:
+    - Dev
+
+  application:
+    name: poc-spring-security-SAML
