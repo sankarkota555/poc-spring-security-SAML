@@ -67,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.addFilterBefore(metadataGeneratorFilter, ChannelProcessingFilter.class);
 
-        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/saml/**").permitAll().anyRequest()
+        http.authorizeRequests().antMatchers("/").authenticated().antMatchers("/saml/**").permitAll().anyRequest()
                 .authenticated();
 
         http.logout().logoutSuccessUrl("/");
