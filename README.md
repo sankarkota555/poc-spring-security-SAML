@@ -57,12 +57,12 @@ Please change below beans or variables in your [SAMLSecurityConfig.java](src/mai
         backgroundTaskTimer.purge();
         return extendedMetadataDelegate;
     }
-
+```
 Please make sure you installed all the certificates provided by your IDP or SAML team.
 
 # References
 https://projects.spring.io/spring-security-saml/
+
 Documentation: https://docs.spring.io/spring-security-saml/docs/1.0.4.BUILD-SNAPSHOT/reference/htmlsingle/
+
 Sample application: https://github.com/spring-projects/spring-security-saml/tree/develop/sample
-
-
