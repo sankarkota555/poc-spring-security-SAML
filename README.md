@@ -20,13 +20,14 @@ Once apllication is started running, goto application url http://localhost:8087/
 4) Using logout link you can logout from application.
 
 # Integrate in your app
-1) In your [SAMLSecurityConfig.java](src/main/java/com/aa/security/saml/config/SAMLSecurityConfig.java) file change ENTITY_ID to your unique ID.
+Please change below beans or variables in your [SAMLSecurityConfig.java](src/main/java/com/aa/security/saml/config/SAMLSecurityConfig.java) as per your requirement.
+1) Change ENTITY_ID to your unique ID.
 
  Example: 
 ```java
            private static final String ENTITY_ID = "urn:test:yourname:yourcity";
 ```
-2) update samlKeystore.jks with your IDP provided keystore.jks and provide password and default key in below keymanager bean
+2) I mentioned keymanager in below code, this is for only POC purpose, While integrating spring security saml in your apllication please don't put certificates in code. For importing you can use keytool command 
 
 ```java
     @Bean
@@ -40,7 +41,7 @@ Once apllication is started running, goto application url http://localhost:8087/
         return new JKSKeyManager(storeFile, storePass, passwords, defaultKey);
     }
 ```
-3) 
+3) Below bean is for retrieving IDP metadata, please change "http://idp.ssocircle.com/idp-meta.xml" to your IDP provided URL. We have another way to retrieve IDP metadata please find it here https://docs.spring.io/spring-security-saml/docs/1.0.4.BUILD-SNAPSHOT/reference/htmlsingle/#chapter-idp-guide-adfs-idp
 ```java
     @Bean
     public ExtendedMetadataDelegate ssoCircleExtendedMetadataProvider() throws MetadataProviderException {
