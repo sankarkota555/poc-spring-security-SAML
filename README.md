@@ -27,7 +27,7 @@ Please change below beans or variables in your [SAMLSecurityConfig.java](src/mai
 ```java
            private static final String ENTITY_ID = "urn:test:yourname:yourcity";
 ```
-2) I mentioned keymanager in below code, this is for only POC purpose, While integrating spring security saml in your apllication please don't put certificates in code. For importing you can use keytool command 
+2) I mentioned keymanager in below code, this is for only POC purpose. In real time we usually installing certificates in server. While integrating spring security saml in your application please don't maintain certificates in your code you can use java keytool command for importing certificates.
 
 ```java
     @Bean
@@ -41,7 +41,7 @@ Please change below beans or variables in your [SAMLSecurityConfig.java](src/mai
         return new JKSKeyManager(storeFile, storePass, passwords, defaultKey);
     }
 ```
-3) Below bean is for retrieving IDP metadata, please change "http://idp.ssocircle.com/idp-meta.xml" to your IDP provided URL. We have another way to retrieve IDP metadata please find it here https://docs.spring.io/spring-security-saml/docs/1.0.4.BUILD-SNAPSHOT/reference/htmlsingle/#chapter-idp-guide-adfs-idp
+3) Below bean is for retrieving IDP metadata, please change "http://idp.ssocircle.com/idp-meta.xml" to your IDP provided URL. We have another way to retrieve IDP metadata also please find it here https://docs.spring.io/spring-security-saml/docs/1.0.4.BUILD-SNAPSHOT/reference/htmlsingle/#chapter-idp-guide-adfs-idp
 ```java
     @Bean
     public ExtendedMetadataDelegate ssoCircleExtendedMetadataProvider() throws MetadataProviderException {
@@ -58,5 +58,11 @@ Please change below beans or variables in your [SAMLSecurityConfig.java](src/mai
         return extendedMetadataDelegate;
     }
 
+Please make sure you installed all the certificates provided by your IDP or SAML team.
+
+# References
+https://projects.spring.io/spring-security-saml/
+Documentation: https://docs.spring.io/spring-security-saml/docs/1.0.4.BUILD-SNAPSHOT/reference/htmlsingle/
+Sample application: https://github.com/spring-projects/spring-security-saml/tree/develop/sample
 
 
