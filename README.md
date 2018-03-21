@@ -20,7 +20,7 @@ Once apllication is started running, goto application url http://localhost:8087/
 4) Using logout link you can logout from application.
 
 # Integrate in your app
-Please change below beans or variables in your [SAMLSecurityConfig.java](src/main/java/com/aa/security/saml/config/SAMLSecurityConfig.java) as per your requirement.
+Please follow below steps and change beans and variables in your [SAMLSecurityConfig.java](src/main/java/com/aa/security/saml/config/SAMLSecurityConfig.java) as per your requirement.
 1) Change ENTITY_ID to your unique ID.
 
  Example: 
@@ -58,7 +58,8 @@ Please change below beans or variables in your [SAMLSecurityConfig.java](src/mai
         return extendedMetadataDelegate;
     }
 ```
-Please make sure you installed all the certificates provided by your IDP or SAML team.
+
+4) Please make sure you installed all the certificates provided by your IDP or SAML team.
 
 # References
 https://projects.spring.io/spring-security-saml/
