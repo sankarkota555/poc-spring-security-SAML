@@ -20,7 +20,7 @@ Once apllication is started running, goto application url http://localhost:8087/
 4) Using logout link you can logout from application.
 
 # Integrate in your app
-Please follow below steps and change beans and variables in your [SAMLSecurityConfig.java](src/main/java/com/aa/security/saml/config/SAMLSecurityConfig.java) as per your requirement.
+Please follow below steps and change below beans or variables in your [SAMLSecurityConfig.java](src/main/java/com/aa/security/saml/config/SAMLSecurityConfig.java) as per your requirement.
 1) Change ENTITY_ID to your unique ID.
 
  Example: 
