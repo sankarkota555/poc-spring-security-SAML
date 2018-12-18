@@ -80,7 +80,10 @@ public class SAMLSecurityConfig {
 
     private static final Logger log = LoggerFactory.getLogger(SAMLSecurityConfig.class);
 
-    private static final String ENTITY_ID = "com:aa:snap:sso2";
+   // private static final String ENTITY_ID = "com:aa:snap:sso2";
+    
+    private static final String ENTITY_ID = "com:sanp:aa:common";
+   
 
     private Timer backgroundTaskTimer;
     private MultiThreadedHttpConnectionManager multiThreadedHttpConnectionManager;

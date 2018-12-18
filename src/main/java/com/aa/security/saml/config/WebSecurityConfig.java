@@ -67,8 +67,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.addFilterBefore(metadataGeneratorFilter, ChannelProcessingFilter.class);
 
-        http.authorizeRequests().antMatchers("/").authenticated().antMatchers("/saml/**").permitAll().anyRequest()
-                .authenticated();
+       /* http.authorizeRequests().antMatchers("/").authenticated().antMatchers("/saml/**").permitAll().anyRequest()
+                .authenticated();*/
+        
+        http.authorizeRequests().antMatchers("/health").permitAll().antMatchers("/saml/**").permitAll().antMatchers("/admin/**").hasRole("ADMIN")
+        .antMatchers("/**").hasRole("USER").anyRequest().authenticated();
 
         http.logout().logoutSuccessUrl("/");
     }
